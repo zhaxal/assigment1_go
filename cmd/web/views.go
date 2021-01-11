@@ -1,25 +1,56 @@
 package main
 
 import (
+	"bytes"
 	"html/template"
 	"net/http"
 	"path/filepath"
+	"time"
+
+	"awesomeProject/pkg/models"
 )
 
-func (app *App) RenderHTML(w http.ResponseWriter, page string) {
+type HTMLData struct {
+	Form     interface{}
+	Flash    string
+	Path     string
+	Snippet  *models.Snippet
+	Snippets []*models.Snippet
+}
+
+func humanDate(t time.Time) string {
+	return t.Format("02 Jan 2006 at 15:04")
+}
+
+func (app *App) RenderHTML(w http.ResponseWriter, r *http.Request, page string, data *HTMLData) {
+	if data == nil {
+		data = &HTMLData{}
+	}
+
+	data.Path = r.URL.Path
+
 	files := []string{
 		filepath.Join(app.HTMLDir, "base.html"),
 		filepath.Join(app.HTMLDir, page),
 	}
 
-	ts, err := template.ParseFiles(files...)
+	funcMap := template.FuncMap{
+		"humanDate": humanDate,
+	}
+
+	ts, err := template.New("").Funcs(funcMap).ParseFiles(files...)
 	if err != nil {
 		app.ServerError(w, err)
 		return
 	}
 
-	err = ts.ExecuteTemplate(w, "base", nil)
+	buf := new(bytes.Buffer)
+
+	err = ts.ExecuteTemplate(buf, "base", data)
 	if err != nil {
 		app.ServerError(w, err)
+		return
 	}
+
+	buf.WriteTo(w)
 }

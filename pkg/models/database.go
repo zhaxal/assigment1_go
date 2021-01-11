@@ -1,24 +1,23 @@
 package models
 
 import (
+	"context"
 	"database/sql"
-	"strconv"
+	"github.com/jackc/pgx/v4/pgxpool"
 )
 
 type Database struct {
-	*sql.DB
+	DB *pgxpool.Pool
 }
 
-
-
 func (db *Database) GetSnippet(id int) (*Snippet, error) {
-	stmt := "SELECT id, title, content, created, expires FROM snippets WHERE expires > current_timestamp AND id = "+strconv.Itoa(id)
-	row := db.QueryRow(stmt)
+	stmt := `SELECT id, title, content, (created::timestamp(0)), (expires::timestamp(0)) FROM snippets WHERE expires > current_timestamp AND id=$1`
+
+	row := db.DB.QueryRow(context.Background(), stmt, id)
 
 	s := &Snippet{}
 
 	err := row.Scan(&s.ID, &s.Title, &s.Content, &s.Created, &s.Expires)
-
 	if err == sql.ErrNoRows {
 		return nil, nil
 	} else if err != nil {
@@ -29,10 +28,10 @@ func (db *Database) GetSnippet(id int) (*Snippet, error) {
 }
 
 func (db *Database) LatestSnippets() (Snippets, error) {
-	stmt := `SELECT id, title, content, created, expires FROM snippets
-	WHERE expires > current_timestamp ORDER BY created DESC LIMIT 10`
+	stmt := `SELECT id, title, content, (created::timestamp(0)), (expires::timestamp(0)) FROM snippets "+
+			"WHERE expires > current_timestamp ORDER BY created DESC LIMIT 10`
 
-	rows, err := db.Query(stmt)
+	rows, err := db.DB.Query(context.Background(), stmt)
 	if err != nil {
 		return nil, err
 	}
@@ -60,18 +59,15 @@ func (db *Database) LatestSnippets() (Snippets, error) {
 }
 
 func (db *Database) InsertSnippet(title, content, expires string) (int, error) {
-	stmt := `INSERT INTO snippets (title, content, created, expires)
-	VALUES(?, ?, current_timestamp, current_date + interval '? second')`
+	stmt := "INSERT INTO snippets (title, content, created, expires) VALUES($1, $2, current_timestamp, current_date + interval '" + expires + " second') returning id"
 
-	result, err := db.Exec(stmt, title, content, expires)
+	_, err := db.DB.Exec(context.Background(), stmt, title, content)
+	result := db.DB.QueryRow(context.Background(), "SELECT currval('snippets_id_seq');")
 	if err != nil {
 		return 0, err
 	}
+	var id int
+	_ = result.Scan(&id)
 
-	id, err := result.LastInsertId()
-	if err != nil {
-		return 0, nil
-	}
-
-	return int(id), nil
+	return id, nil
 }

@@ -1,14 +1,17 @@
 package main
 
 import (
-	"database/sql"
+	"context"
 	"flag"
+	"github.com/jackc/pgx/v4/pgxpool"
 	"log"
 	"net/http"
+	"time"
 
-	"snippetbox/pkg/models"
+	"awesomeProject/pkg/models"
 
-	_ "github.com/lib/pq"
+	"github.com/alexedwards/scs"
+	_ "github.com/jackc/pgx/v4/pgxpool"
 )
 
 const (
@@ -23,35 +26,33 @@ func main() {
 	addr := flag.String("addr", ":4000", "HTTP network address")
 	dsn := "user=postgres dbname=snippetbox password=aserty1234 host=localhost sslmode=disable"
 	htmlDir := flag.String("html-dir", "./ui/html", "Path to HTML templates")
+	secret := flag.String("secret", "s6Nd%+pPbnzHbS*+9Pk8qGWhTzbpa@ge", "Secret key")
 	staticDir := flag.String("static-dir", "./ui/static", "Path to static assets directory")
 	flag.Parse()
 
-	db := connect(dsn)
+	db, err := connect(dsn)
 	defer db.Close()
 
+	sessionManager := scs.NewCookieManager(*secret)
+	sessionManager.Lifetime(12 * time.Hour)
+	sessionManager.Persist(true)
 
 	app := &App{
-		Database:  &models.Database{db},
+		Database:  &models.Database{DB: db},
 		HTMLDir:   *htmlDir,
+		Sessions:  sessionManager,
 		StaticDir: *staticDir,
 	}
 
-
 	log.Printf("Server listening on %s", *addr)
-	err := http.ListenAndServe(*addr, app.Routes())
+	err = http.ListenAndServe(*addr, app.Routes())
 	log.Fatal(err)
 }
 
-
-func connect(dsn string) *sql.DB {
-	db, err := sql.Open("postgres", dsn)
+func connect(dsn string) (*pgxpool.Pool, error) {
+	pool, err := pgxpool.Connect(context.Background(), dsn)
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
-
-	if err := db.Ping(); err != nil {
-		log.Fatal(err)
-	}
-
-	return db
+	return pool, nil
 }

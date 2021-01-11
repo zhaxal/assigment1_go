@@ -4,20 +4,24 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
+
+	"awesomeProject/pkg/forms"
 )
 
 func (app *App) Home(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/" {
-		app.NotFound(w)
+	snippets, err := app.Database.LatestSnippets()
+	if err != nil {
+		app.ServerError(w, err)
 		return
 	}
 
-	app.RenderHTML(w, "home.page.html")
+	app.RenderHTML(w, r, "home.page.html", &HTMLData{
+		Snippets: snippets,
+	})
 }
 
 func (app *App) ShowSnippet(w http.ResponseWriter, r *http.Request) {
-	id, err := strconv.Atoi(r.URL.Query().Get("id"))
-
+	id, err := strconv.Atoi(r.URL.Query().Get(":id"))
 	if err != nil || id < 1 {
 		app.NotFound(w)
 		return
@@ -33,9 +37,59 @@ func (app *App) ShowSnippet(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Fprint(w, snippet)
+	session := app.Sessions.Load(r)
+
+	flash, err := session.PopString(w, "flash")
+	if err != nil {
+		app.ServerError(w, err)
+		return
+	}
+
+	app.RenderHTML(w, r, "show.page.html", &HTMLData{
+		Flash:   flash,
+		Snippet: snippet,
+	})
 }
 
 func (app *App) NewSnippet(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Display the snippet form"))
+	app.RenderHTML(w, r, "new.page.html", &HTMLData{
+		Form: &forms.NewSnippet{},
+	})
+}
+
+func (app *App) CreateSnippet(w http.ResponseWriter, r *http.Request) {
+	err := r.ParseForm()
+	if err != nil {
+		app.ClientError(w, http.StatusBadRequest)
+		return
+	}
+
+	form := &forms.NewSnippet{
+		Title:   r.PostForm.Get("title"),
+		Content: r.PostForm.Get("content"),
+		Expires: r.PostForm.Get("expires"),
+	}
+
+	if !form.Valid() {
+		app.RenderHTML(w, r, "new.page.html", &HTMLData{
+			Form: form,
+		})
+		return
+	}
+
+	id, err := app.Database.InsertSnippet(form.Title, form.Content, form.Expires)
+	if err != nil {
+		app.ServerError(w, err)
+		return
+	}
+
+	session := app.Sessions.Load(r)
+
+	err = session.PutString(w, "flash", "Your snippet was saved successfully!")
+	if err != nil {
+		app.ServerError(w, err)
+		return
+	}
+
+	http.Redirect(w, r, fmt.Sprintf("/snippet/%d", id), http.StatusSeeOther)
 }
