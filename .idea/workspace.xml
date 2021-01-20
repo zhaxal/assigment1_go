@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="855cf574-88d3-4655-aa64-0cd9f7a2ce3d" name="Default Changelist" comment="" />
+    <list default="true" id="855cf574-88d3-4655-aa64-0cd9f7a2ce3d" name="Default Changelist" comment="chapter9 done">
+      <change afterPath="$PROJECT_DIR$/ui/static.rar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,17 +36,29 @@
     </option>
   </component>
   <component name="GOROOT" path="C:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
   <component name="ProjectId" id="1mbYuPO7BHzitH2mFzzm4mj5Zc1" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -86,35 +119,55 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="chapter9 done" />
+    <option name="LAST_COMMIT_MESSAGE" value="chapter9 done" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
   <component name="WindowStateProjectService">
     <state x="221" y="346" key="#SQL_Dialects" timestamp="1609765297396">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="221" y="346" key="#SQL_Dialects/0.0.1680.1010@0.0.1680.1010" timestamp="1609765297396" />
-    <state x="432" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609765032258">
+    <state x="432" y="163" width="1092" height="716" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610406669206">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1609765032258" />
+    <state x="432" y="163" width="1092" height="716" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1610406669206" />
     <state x="620" y="260" width="440" height="490" key="FileChooserDialogImpl" timestamp="1609767521715">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="620" y="260" width="440" height="490" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1609767521715" />
-    <state width="1637" height="336" key="GridCell.Tab.0.bottom" timestamp="1609875918778">
+    <state width="818" height="272" key="GridCell.Tab.0.bottom" timestamp="1610457685582">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1609875918778" />
-    <state width="1637" height="336" key="GridCell.Tab.0.center" timestamp="1609875918778">
+    <state width="818" height="272" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1610457685582" />
+    <state width="818" height="272" key="GridCell.Tab.0.center" timestamp="1610457685582">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1609875918778" />
-    <state width="1637" height="336" key="GridCell.Tab.0.left" timestamp="1609875918777">
+    <state width="818" height="272" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1610457685582" />
+    <state width="818" height="272" key="GridCell.Tab.0.left" timestamp="1610457685582">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1609875918777" />
-    <state width="1637" height="336" key="GridCell.Tab.0.right" timestamp="1609875918778">
+    <state width="818" height="272" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1610457685582" />
+    <state width="818" height="272" key="GridCell.Tab.0.right" timestamp="1610457685582">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1609875918778" />
+    <state width="818" height="272" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1610457685582" />
     <state width="1637" height="336" key="GridCell.Tab.1.bottom" timestamp="1609875918778">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -135,6 +188,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state width="212" height="471" key="HiddenNamespacesPopup/0.0.1680.1010@0.0.1680.1010" timestamp="1609765147799" />
+    <state x="432" y="237" key="Vcs.Push.Dialog.v2" timestamp="1610406746116">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="432" y="237" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1610406746116" />
     <state x="722" y="392" width="316" height="245" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1609873176355">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -161,7 +218,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/cmd/web/handlers.go</url>
-          <line>17</line>
+          <line>22</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
