@@ -19,16 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="855cf574-88d3-4655-aa64-0cd9f7a2ce3d" name="Default Changelist" comment="chapter9 done">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/psql.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/awesomeProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/snippetbox_zhakha.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="855cf574-88d3-4655-aa64-0cd9f7a2ce3d" name="Default Changelist" comment="added docker files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/web/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/web/application.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/web/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/web/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/static.rar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +66,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="DockerRegistry" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RunManager" selected="Go Build.go build awesomeProject/cmd/web">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
@@ -173,7 +165,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="chapter9 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="chapter9 done" />
+    <MESSAGE value="added docker files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added docker files" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -239,14 +232,14 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state width="212" height="471" key="HiddenNamespacesPopup/0.0.1680.1010@0.0.1680.1010" timestamp="1612370101304" />
-    <state x="341" y="149" key="SettingsEditor" timestamp="1612341034556">
+    <state x="341" y="149" key="SettingsEditor" timestamp="1612379082613">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="341" y="149" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1612341034556" />
-    <state x="432" y="237" key="Vcs.Push.Dialog.v2" timestamp="1611133398569">
+    <state x="341" y="149" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1612379082613" />
+    <state x="432" y="237" key="Vcs.Push.Dialog.v2" timestamp="1612378950269">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="237" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1611133398569" />
+    <state x="432" y="237" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1612378950269" />
     <state x="722" y="392" width="316" height="245" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1609873176355">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
