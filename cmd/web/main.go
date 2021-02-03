@@ -6,6 +6,7 @@ import (
 	"github.com/jackc/pgx/v4/pgxpool"
 	"log"
 	"net/http"
+	"os"
 	"time"
 
 	"awesomeProject/pkg/models"
@@ -24,13 +25,13 @@ const (
 
 func main() {
 	addr := flag.String("addr", ":4000", "HTTP network address")
-	dsn := "user=postgres dbname=snippetbox password=aserty1234 host=localhost sslmode=disable"
+	dsn := flag.String("dsn", os.Getenv("CONN"), "PostGreSQL")
 	htmlDir := flag.String("html-dir", "./ui/html", "Path to HTML templates")
 	secret := flag.String("secret", "s6Nd%+pPbnzHbS*+9Pk8qGWhTzbpa@ge", "Secret key")
 	staticDir := flag.String("static-dir", "./ui/static", "Path to static assets directory")
 	flag.Parse()
 
-	db, err := connect(dsn)
+	db, err := connect(*dsn)
 	defer db.Close()
 
 	sessionManager := scs.NewCookieManager(*secret)
