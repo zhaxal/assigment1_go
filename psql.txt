@@ -1,0 +1,21 @@
+create table snippets
+(
+    id      serial       not null
+        constraint snippets_pkey
+            primary key,
+    title   varchar(100) not null,
+    content text         not null,
+    created timestamp    not null,
+    expires timestamp    not null
+);
+
+INSERT INTO snippets (id, title, content, created, expires) VALUES (1, 'An old silent pond', 'An old silent pond...\nA frog jumps into the pond,\nsplash! Silence again.\n\n– Matsuo Bashō', '2021-01-05 19:04:02.553621', '2022-01-05 00:00:00.000000');
+INSERT INTO snippets (id, title, content, created, expires) VALUES (2, 'Over the wintry forest', 'Over the wintry\nforest, winds howl in rage\nwith no leaves to blow.\n\n– Natsume Soseki', '2021-01-05 19:04:02.599473', '2022-01-05 00:00:00.000000');
+INSERT INTO snippets (id, title, content, created, expires) VALUES (3, 'First autumn morning', 'First autumn morning\nthe mirror I stare into\nshows my father''s face.\n\n– Murakami Kijo', '2021-01-05 19:04:02.627584', '2021-01-12 00:00:00.000000');
+INSERT INTO snippets (id, title, content, created, expires) VALUES (10, 'some text', 'some content', '2021-01-11 22:51:34.392349', '2021-01-11 00:00:40.000000');
+INSERT INTO snippets (id, title, content, created, expires) VALUES (11, 'some text', 'some content', '2021-01-11 22:51:42.723198', '2021-01-11 00:00:40.000000');
+INSERT INTO snippets (id, title, content, created, expires) VALUES (12, 'Welcome', 'wilww', '2021-01-12 04:56:01.389709', '2022-01-12 00:00:00.000000');
+INSERT INTO snippets (id, title, content, created, expires) VALUES (13, 'Welcome', 'wilww', '2021-01-12 04:56:06.349026', '2022-01-12 00:00:00.000000');
+INSERT INTO snippets (id, title, content, created, expires) VALUES (14, 'Welcome', 'wilww', '2021-01-12 04:56:28.088628', '2022-01-12 00:00:00.000000');
+INSERT INTO snippets (id, title, content, created, expires) VALUES (15, 'Welcome', 'wilww', '2021-01-12 04:56:57.354567', '2022-01-12 00:00:00.000000');
+INSERT INTO snippets (id, title, content, created, expires) VALUES (16, 'Batko pidor', 'on kupil mark', '2021-01-12 19:08:46.179608', '2021-01-13 00:00:00.000000');

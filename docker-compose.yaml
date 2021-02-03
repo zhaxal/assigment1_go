@@ -1,0 +1,22 @@
+version: '3.4'
+services:
+  snippetbox:
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "4000:4000"
+    build:
+      dockerfile: Dockerfile
+      context: .
+  db:
+    image: "postgres"
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: aserty1234
+      POSTGRES_DB: snippetbox
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data.sql:/docker-entrypoint-initdb.d/init.sql

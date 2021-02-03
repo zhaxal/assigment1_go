@@ -20,8 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="855cf574-88d3-4655-aa64-0cd9f7a2ce3d" name="Default Changelist" comment="chapter9 done">
-      <change afterPath="$PROJECT_DIR$/ui/static.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/psql.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/awesomeProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/snippetbox_zhakha.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/web/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/web/application.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/web/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/web/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/static.rar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,20 +64,21 @@
     <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Assignment1-Go-master/Assignment1-Go-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="DockerRegistry" />
   </component>
   <component name="RunManager" selected="Go Build.go build awesomeProject/cmd/web">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
-      <module name="awesomeProject" />
+      <module name="snippetbox_zhakha" />
       <working_directory value="$PROJECT_DIR$" />
       <go_parameters value="-i" />
       <kind value="FILE" />
@@ -80,7 +88,7 @@
       <method v="2" />
     </configuration>
     <configuration name="go build awesomeProject/cmd/web" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="awesomeProject" />
+      <module name="snippetbox_zhakha" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/cmd/web/main.go" />
@@ -88,17 +96,8 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build snippetbox/cmd/web" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="awesomeProject" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/cmd/web/main.go" />
-      <package value="snippetbox/cmd/web" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
-      <module name="awesomeProject" />
+      <module name="snippetbox_zhakha" />
       <working_directory value="$PROJECT_DIR$" />
       <go_parameters value="-i" />
       <framework value="gotest" />
@@ -108,10 +107,50 @@
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.snippetbox: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="snippetbox" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose: Compose Deployment" />
         <item itemvalue="Go Build.go build awesomeProject/cmd/web" />
-        <item itemvalue="Go Build.go build snippetbox/cmd/web" />
+        <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.snippetbox: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -140,34 +179,46 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
+    <state x="637" y="399" key="#Push_Image" timestamp="1612342429671">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="637" y="399" key="#Push_Image/0.0.1680.1010@0.0.1680.1010" timestamp="1612342429671" />
     <state x="221" y="346" key="#SQL_Dialects" timestamp="1609765297396">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="221" y="346" key="#SQL_Dialects/0.0.1680.1010@0.0.1680.1010" timestamp="1609765297396" />
-    <state x="432" y="163" width="1092" height="716" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610406669206">
+    <state x="432" y="163" width="1092" height="812" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612370872130">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="163" width="1092" height="716" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1610406669206" />
-    <state x="620" y="260" width="440" height="490" key="FileChooserDialogImpl" timestamp="1609767521715">
+    <state x="432" y="163" width="1092" height="812" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1612370872130" />
+    <state x="580" y="306" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612368042682">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="620" y="260" width="440" height="490" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1609767521715" />
-    <state width="818" height="272" key="GridCell.Tab.0.bottom" timestamp="1610457685582">
+    <state x="580" y="306" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1010@0.0.1680.1010" timestamp="1612368042682" />
+    <state x="816" y="436" key="DockerComposeFileDialog" timestamp="1612341381015">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="818" height="272" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1610457685582" />
-    <state width="818" height="272" key="GridCell.Tab.0.center" timestamp="1610457685582">
+    <state x="816" y="436" key="DockerComposeFileDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1612341381015" />
+    <state x="624" y="264" width="440" height="490" key="FileChooserDialogImpl" timestamp="1612368568148">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="818" height="272" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1610457685582" />
-    <state width="818" height="272" key="GridCell.Tab.0.left" timestamp="1610457685582">
+    <state x="624" y="264" width="440" height="490" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1612368568148" />
+    <state width="1114" height="269" key="GridCell.Tab.0.bottom" timestamp="1612372183328">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="818" height="272" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1610457685582" />
-    <state width="818" height="272" key="GridCell.Tab.0.right" timestamp="1610457685582">
+    <state width="1114" height="269" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1612372183328" />
+    <state width="1114" height="269" key="GridCell.Tab.0.center" timestamp="1612372183328">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="818" height="272" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1610457685582" />
+    <state width="1114" height="269" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1612372183328" />
+    <state width="1114" height="269" key="GridCell.Tab.0.left" timestamp="1612372183327">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1114" height="269" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1612372183327" />
+    <state width="1114" height="269" key="GridCell.Tab.0.right" timestamp="1612372183328">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1114" height="269" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1612372183328" />
     <state width="1637" height="336" key="GridCell.Tab.1.bottom" timestamp="1609875918778">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -184,14 +235,18 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state width="1637" height="336" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1609875918778" />
-    <state width="212" height="471" key="HiddenNamespacesPopup" timestamp="1609765147799">
+    <state width="212" height="471" key="HiddenNamespacesPopup" timestamp="1612370101304">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="212" height="471" key="HiddenNamespacesPopup/0.0.1680.1010@0.0.1680.1010" timestamp="1609765147799" />
-    <state x="432" y="237" key="Vcs.Push.Dialog.v2" timestamp="1610406746116">
+    <state width="212" height="471" key="HiddenNamespacesPopup/0.0.1680.1010@0.0.1680.1010" timestamp="1612370101304" />
+    <state x="341" y="149" key="SettingsEditor" timestamp="1612341034556">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="237" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1610406746116" />
+    <state x="341" y="149" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1612341034556" />
+    <state x="432" y="237" key="Vcs.Push.Dialog.v2" timestamp="1611133398569">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="432" y="237" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1611133398569" />
     <state x="722" y="392" width="316" height="245" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1609873176355">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -208,6 +263,22 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="683" y="117" width="847" height="615" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1609873322730" />
+    <state x="877" y="453" width="459" height="208" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1612341172318">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="877" y="453" width="459" height="208" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/0.0.1680.1010@0.0.1680.1010" timestamp="1612341172318" />
+    <state x="92" y="92" width="1496" height="826" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1612376074913">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="92" y="92" width="1496" height="826" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1612376074913" />
+    <state x="445" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1612371384883">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="445" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1680.1010@0.0.1680.1010" timestamp="1612371384883" />
+    <state x="547" y="238" width="585" height="534" key="find.popup" timestamp="1611312196887">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="547" y="238" width="585" height="534" key="find.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1611312196887" />
     <state x="503" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1609872758267">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
